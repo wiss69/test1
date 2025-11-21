@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <h2>Dépenses</h2>
+  <p>Liste locale des tickets importés. Export CSV disponible.</p>
+  <div class="actions"><button id="export-csv">Exporter CSV</button></div>
+  <table id="expenses-table" aria-label="Dépenses">
+    <thead><tr><th>Marchand</th><th>Date</th><th>Total</th><th>Catégorie</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+<script src="{{ url_for('static', filename='js/expenses.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,61 @@
+merchants:
+  - name: "Netto"
+    aliases: ["Netto"]
+    regex: ["netto"]
+    default_category: "supermarché"
+  - name: "E.Leclerc"
+    aliases: ["Leclerc", "E LECLERC", "E. Leclerc"]
+    regex: ["leclerc"]
+    default_category: "supermarché"
+  - name: "Gamm Vert"
+    aliases: ["GAMM VERT"]
+    regex: ["gamm vert"]
+    default_category: "jardin"
+  - name: "Carrefour"
+    aliases: ["Carrefour Market", "Carrefour City"]
+    regex: ["carrefour"]
+    default_category: "supermarché"
+  - name: "Lidl"
+    aliases: ["LIDL"]
+    regex: ["lidl"]
+    default_category: "discount"
+  - name: "Aldi"
+    aliases: ["ALDI"]
+    regex: ["aldi"]
+    default_category: "discount"
+  - name: "Monoprix"
+    aliases: ["MONOPRIX"]
+    regex: ["monoprix"]
+    default_category: "supermarché"
+  - name: "Auchan"
+    aliases: ["AUCHAN"]
+    regex: ["auchan"]
+    default_category: "supermarché"
+  - name: "Intermarché"
+    aliases: ["INTERMARCHÉ", "Intermarche"]
+    regex: ["intermarch"]
+    default_category: "supermarché"
+  - name: "U Express"
+    aliases: ["Super U", "Hyper U", "U EXPRESS"]
+    regex: ["\bu\s?(express|hyper|super)"]
+    default_category: "supermarché"
+  - name: "Géant Casino"
+    aliases: ["Geant", "Casino"]
+    regex: ["casino"]
+    default_category: "supermarché"
+  - name: "Fnac"
+    aliases: ["FNAC"]
+    regex: ["fnac"]
+    default_category: "électronique"
+  - name: "Darty"
+    aliases: ["DARTY"]
+    regex: ["darty"]
+    default_category: "électronique"
+  - name: "Decathlon"
+    aliases: ["DECATHLON"]
+    regex: ["decathlon"]
+    default_category: "sport"
+  - name: "Big M"
+    aliases: ["BIG M"]
+    regex: ["big m"]
+    default_category: "restauration"

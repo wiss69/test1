@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or 'TicketZen' }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/visual_lock.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body class="tz-body">
+  <header class="tz-header">
+    <div class="logo">TicketZen</div>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/scanner">Scanner</a>
+      <a href="/expenses">Dépenses</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/settings">Paramètres</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language switch">
+      <button data-lang="fr" class="lang active">FR</button>
+      <button data-lang="en" class="lang">EN</button>
+    </div>
+  </header>
+  <main class="tz-main">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="tz-footer">
+    <small>TicketZen · Azure Document Intelligence · Local-first</small>
+  </footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <h2>Scanner / Intake</h2>
+  <p>Scannez ce QR depuis votre mobile et saisissez le code PIN affiché.</p>
+  <div class="qr-box">
+    <canvas id="qr"></canvas>
+    <div class="pin">PIN : <span id="pin">{{ pin }}</span></div>
+    <button id="refresh-pin">Nouveau QR</button>
+    <p class="muted">TTL ~5 min. Lien mobile : <code id="qr-url">{{ payload_url }}</code></p>
+  </div>
+</section>
+<script>
+  const initialUrl = "{{ payload_url }}";
+  function renderQR(url){
+    const canvas = document.getElementById('qr');
+    QRCode.toCanvas(canvas, url, { width: 240 });
+    document.getElementById('qr-url').textContent = url;
+  }
+  renderQR(initialUrl);
+  document.getElementById('refresh-pin').addEventListener('click', async () => {
+    const res = await fetch('/refresh_pin');
+    const data = await res.json();
+    if(data.ok){
+      document.getElementById('pin').textContent = data.pin;
+      renderQR(data.url);
+    }
+  });
+</script>
+{% endblock %}

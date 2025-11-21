@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <h2>KPIs & Stats</h2>
+  <div class="chart-grid">
+    <canvas id="chart-donut" aria-label="Répartition"></canvas>
+    <canvas id="chart-bar" aria-label="Chronologie"></canvas>
+  </div>
+</section>
+<script src="{{ url_for('static', filename='js/dashboard.v2.js') }}"></script>
+{% endblock %}
