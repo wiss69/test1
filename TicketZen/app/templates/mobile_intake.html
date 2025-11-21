@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <h2>Import mobile</h2>
+  <p>Ce service utilise Azure Document Intelligence pour lire votre ticket. Vos données restent locales sur votre appareil hôte.</p>
+  <div class="upload-box">
+    <label class="file-label" for="file-input">Ajouter une photo / PDF</label>
+    <input id="file-input" type="file" accept="image/*,.pdf" aria-label="Choisir un fichier">
+    <button id="upload-btn">Envoyer</button>
+    <button id="analyze-btn">Analyser</button>
+  </div>
+  <div id="status" class="status">PIN: {{ pin }} · En attente</div>
+  <div id="result" class="result" aria-live="polite"></div>
+</section>
+<script src="{{ url_for('static', filename='js/mobile_intake.js') }}"></script>
+<script>
+  window.TZ_PIN = "{{ pin }}";
+</script>
+{% endblock %}

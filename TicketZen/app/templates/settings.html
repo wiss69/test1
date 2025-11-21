@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <h2>Paramètres</h2>
+  <form class="settings-form">
+    <label>Thème
+      <select>
+        <option>Clair</option>
+        <option>Sombre</option>
+      </select>
+    </label>
+    <label>Langue
+      <select>
+        <option>FR</option>
+        <option>EN</option>
+      </select>
+    </label>
+    <label>OCR Vendor
+      <select>
+        <option>Azure</option>
+        <option>Dry-run</option>
+      </select>
+    </label>
+  </form>
+</section>
+{% endblock %}
